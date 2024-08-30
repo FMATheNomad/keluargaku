@@ -30,3 +30,23 @@ function showPage(pageId) {
             rangeLabel.textContent = `Sudah Dikerjakan (${value}%)`;
         }
     });
+
+    function handleOtherOption(selectElement) {
+        const otherInputContainer = document.getElementById('otherInputContainer');
+        if (selectElement.value === 'other') {
+          otherInputContainer.classList.remove('d-none');
+        } else {
+          otherInputContainer.classList.add('d-none');
+        }
+      }
+
+      $(document).ready(function() {
+        $('#datetimepicker').flatpickr({
+          enableTime: true,
+          dateFormat: "Y-m-d H:i", // Format yang disimpan dalam input
+          altInput: true,
+          altFormat: "l, d F Y, H:i", // Format tampilan user
+          time_24hr: true,
+          locale: "id"
+        });
+      });
