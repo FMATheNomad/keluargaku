@@ -41,7 +41,15 @@ function showPage(pageId) {
       }
 
       $(document).ready(function() {
-        $('#datetimepicker').flatpickr({
+        $('#datetimepicker1').flatpickr({
+          enableTime: true,
+          dateFormat: "Y-m-d H:i", // Format yang disimpan dalam input
+          altInput: true,
+          altFormat: "l, d F Y, H:i", // Format tampilan user
+          time_24hr: true,
+          locale: "id"
+        });
+        $('#datetimepicker2').flatpickr({
           enableTime: true,
           dateFormat: "Y-m-d H:i", // Format yang disimpan dalam input
           altInput: true,
