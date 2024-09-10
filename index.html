@@ -489,7 +489,60 @@
         <div class="card">
           <div class="card-body">
             <h2>Daftar Belanja</h2>
-            <p>Fitur ini akan segara kami kembangkan.</p>
+            <form action="">
+              <div class="input-group">
+                <select id="selectFields" class="form-select">
+                  <option value="1">
+                    Berapa daftar jumlah belanjaan yang ingin di catat?
+                  </option>
+                  <option value="2">3 Fields</option>
+                  <option value="5">6 Fields</option>
+                  <option value="10">11 Fields</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="customFieldCount"
+                  class="form-control"
+                  placeholder="Atau masukkan jumlah field custom"
+                />
+                <button id="addFieldsBtn" class="btn btn-primary">
+                  Tambah Field
+                </button>
+              </div>
+            </form>
+            <form id="shoppingForm">
+              <div id="fieldsContainer">
+                <!-- Field input daftar belanjaan minimal 1 field -->
+                <div class="row g-0 mt-1 mb-1">
+                  <div class="col-7">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Masukkan nama barang"
+                      name="itemName"
+                      required
+                    />
+                  </div>
+                  <div class="col-3">
+                    <input
+                      type="number"
+                      class="form-control"
+                      placeholder="Jumlah"
+                      name="itemQuantity"
+                      required
+                    />
+                  </div>
+                  <!-- Tombol submit form disamakan posisinya seperti "Tambah Field" -->
+                  <div class="col-2">
+                    <button type="submit" class="btn btn-primary w-100">
+                      Tambah ke Daftar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
