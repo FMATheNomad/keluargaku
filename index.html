@@ -488,7 +488,7 @@
       <div id="shoppingList" class="page d-none">
         <div class="card">
           <div class="card-body">
-            <h2>Daftar Belanja</h2>
+            <h2><u>Manajemen Daftar Belanja</u></h2>
             <form action="">
               <div class="input-group">
                 <select id="selectFields" class="form-select">
@@ -515,34 +515,28 @@
             <form id="shoppingForm">
               <div id="fieldsContainer">
                 <!-- Field input daftar belanjaan minimal 1 field -->
-                <div class="row g-0 mt-1 mb-1">
-                  <div class="col-7">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Masukkan nama barang"
-                      name="itemName"
-                      required
-                    />
-                  </div>
-                  <div class="col-3">
-                    <input
-                      type="number"
-                      class="form-control"
-                      placeholder="Jumlah"
-                      name="itemQuantity"
-                      required
-                    />
-                  </div>
-                  <!-- Tombol submit form disamakan posisinya seperti "Tambah Field" -->
-                  <div class="col-2">
-                    <button type="submit" class="btn btn-primary w-100">
-                      Tambah ke Daftar
-                    </button>
-                  </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    aria-label="First name"
+                    class="form-control"
+                    placeholder="Nama barang"
+                  />
+                  <input
+                    type="text"
+                    aria-label="Last name"
+                    class="form-control"
+                    placeholder="Jumlah"
+                  />
+                  <button type="submit" class="btn btn-primary">+</button>
                 </div>
               </div>
             </form>
+            <h2 class="mt-3"><u>Daftar Belanja</u></h2>
+            <hr />
+            <div class="card">
+              <div class="card-body">Daftar Belanja akan tampil disini</div>
+            </div>
           </div>
         </div>
       </div>

@@ -60,54 +60,41 @@ function showPage(pageId) {
       });
 
       // Funstcion dan event listener untuk fitur fields
-      function addInputFields(count) {
-        for (let i = 0; i < count; i++) {
-          // Buat div baru untuk input
-          const newDiv = document.createElement('div');
-          newDiv.classList.add('row', 'mb-1', 'g-0');
-      
-          // Input Nama Barang
-          const nameDiv = document.createElement('div');
-          nameDiv.classList.add('col-7');
-          const nameInput = document.createElement('input');
-          nameInput.type = 'text';
-          nameInput.classList.add('form-control');
-          nameInput.placeholder = 'Masukkan nama barang';
-          nameInput.name = 'itemName';
-          nameInput.required = true;
-          nameDiv.appendChild(nameInput);
-      
-          // Input Jumlah Barang
-          const quantityDiv = document.createElement('div');
-          quantityDiv.classList.add('col-3');
-          const quantityInput = document.createElement('input');
-          quantityInput.type = 'number';
-          quantityInput.classList.add('form-control');
-          quantityInput.placeholder = 'Jumlah';
-          quantityInput.name = 'itemQuantity';
-          quantityInput.required = true;
-          quantityDiv.appendChild(quantityInput);
-      
-          // Tambah button submit di row ini
-          const buttonDiv = document.createElement('div');
-          buttonDiv.classList.add('col-2');
-          const submitBtn = document.createElement('button');
-          submitBtn.type = 'submit';
-          submitBtn.classList.add('btn', 'btn-primary', 'w-100');
-          submitBtn.textContent = 'Tambah ke Daftar';
-          buttonDiv.appendChild(submitBtn);
-      
-          // Gabungkan semua input dan button dalam satu baris
-          newDiv.appendChild(nameDiv);
-          newDiv.appendChild(quantityDiv);
-          newDiv.appendChild(buttonDiv);
-      
-          // Masukkan ke fieldsContainer
-          fieldsContainer.appendChild(newDiv);
-        }
-      }
+      // Function untuk menambah input field secara dinamis
+function addInputFields(count) {
+  for (let i = 0; i < count; i++) {
+    // Buat div baru untuk field
+    const newDiv = document.createElement('div');
 
-      // Event listener untuk tombol "Tambah Field"
+    // Set innerHTML sesuai dengan struktur input-group
+    newDiv.innerHTML = `
+      <div class="input-group">
+        <input
+          type="text"
+          aria-label="Nama barang"
+          class="form-control"
+          placeholder="Nama barang"
+          name="itemName"
+          required
+        />
+        <input
+          type="text"
+          aria-label="Jumlah"
+          class="form-control"
+          placeholder="Jumlah"
+          name="itemQuantity"
+          required
+        />
+        <button type="submit" class="btn btn-primary">+</button>
+      </div>
+    `;
+
+    // Tambahkan field baru ke dalam container
+    fieldsContainer.appendChild(newDiv);
+  }
+}
+
+// Event listener untuk tombol "Tambah Field"
 addFieldsBtn.addEventListener('click', function (e) {
   e.preventDefault(); // Hindari reload page saat tombol diklik
   const selectedCount = parseInt(selectFields.value);  // Ambil nilai dari dropdown
