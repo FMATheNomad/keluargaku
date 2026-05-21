@@ -59,10 +59,20 @@
                                 <li><a class="dropdown-item" href="#" onclick="showPage('familySettings')">Anggota Keluarga</a></li>
                             </ul>
                         </li>
-                    </ul>
-                </div>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            👤 {{ user_name }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="/logout">Keluar</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
         <hr />
 
         <!-- ======================== DASHBOARD ======================== -->
